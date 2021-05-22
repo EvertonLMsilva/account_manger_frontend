@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     left: 0,
     margin: "0 auto",
-    backgroundColor: "#EEE",
+    backgroundColor: "#EEFEFF",
   },
   Paper: {
     width: 400,
