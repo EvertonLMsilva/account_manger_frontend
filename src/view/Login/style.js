@@ -1,59 +1,87 @@
-import { makeStyles } from "@material-ui/core/styles";
+import styled from "styled-components";
+import { Button, Grid, Paper, Select, TextField } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    minHeight: "100vh",
-    maxHeight: "100%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    position: "absolute",
-    top: 0,
-    left: 0,
-    margin: "0 auto",
-    backgroundColor: "#EEFEFF",
-  },
-  Paper: {
-    width: 400,
-    height: 550,
-    padding: 5,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  form: {
-    width: 300,
-  },
-  textImput: {
-    marginTop: 25,
-  },
-  button: {
-    marginTop: 25,
-    paddingTop: 10,
-    paddingBottom: 10,
-    width: "100%",
-  },
-  buttonGit: {
-    marginTop: 25,
-    paddingTop: 10,
-    paddingBottom: 10,
-    width: "100%",
-    color: "#FFF",
-    backgroundColor: "#000",
-  },
-  buttonFace: {
-    marginTop: 25,
-    paddingTop: 10,
-    paddingBottom: 10,
-    width: "100%",
-    backgroundColor: "#1a538a",
-    color: "#FFF",
-  },
-  adjusted:{
-    margin:"auto", 
-    paddingTop: 15
+export const Container = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  background: #eefeff;
+`;
+
+export const PaperContainer = styled(({ ...otherProps }) => (
+  <Paper {...otherProps} />
+))`
+  && {
+    width: 400px;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-}));
-export default useStyles;
+`;
+
+export const GridCustom = styled(Grid)`
+  && {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const ImputStyle = styled(({ ...otherProps }) => (
+  <TextField {...otherProps} />
+))`
+  && {
+    margin-top: 40px;
+  }
+`;
+
+export const ButtonStyle = styled(({ ...otherProps }) => (
+  <Button
+    variant="outlined"
+    color="primary"
+    fullWidth
+    size="medium"
+    {...otherProps}
+  />
+))`
+  && {
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: ${(props) => props.color};
+    background: ${(props) => props.backgroundColor};
+  }
+  :hover{
+    color: ${(props) => props.colorHover};
+  }
+`;
+
+export const GridText = styled(GridCustom)`
+  && {
+    margin-top: 25px;
+  }
+  span {
+    padding-top: 5px;
+  }
+`;
+
+export const GridSelect = styled(GridText)``;
+
+export const SelectStyle = styled(Select)`
+  && {
+    margin-top: 25px;
+  }
+`;
