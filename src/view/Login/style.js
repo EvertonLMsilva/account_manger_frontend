@@ -83,5 +83,6 @@ export const GridSelect = styled(GridText)``;
 export const SelectStyle = styled(Select)`
   && {
     margin-top: 25px;
+    margin-bottom: 25px;
   }
 `;
