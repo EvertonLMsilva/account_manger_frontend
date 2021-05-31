@@ -47,10 +47,9 @@ export const ImputStyle = styled(({ ...otherProps }) => (
   }
 `;
 
-export const ButtonStyle = styled(({ ...otherProps }) => (
+export const ButtonStyle = styled(({color, ...otherProps }) => (
   <Button
     variant="outlined"
-    color="primary"
     fullWidth
     size="medium"
     {...otherProps}
@@ -62,10 +61,10 @@ export const ButtonStyle = styled(({ ...otherProps }) => (
     padding-top: 10px;
     padding-bottom: 10px;
     color: ${(props) => props.color};
-    background: ${(props) => props.backgroundColor};
+    background: ${(props) => props.background_color};
   }
-  :hover{
-    color: ${(props) => props.colorHover};
+  :hover {
+    color: ${(props) => props.color_hover};
   }
 `;
 
@@ -80,7 +79,7 @@ export const GridText = styled(GridCustom)`
 
 export const GridSelect = styled(GridText)``;
 
-export const SelectStyle = styled(Select)`
+export const SelectStyle = styled(({...otherProps})=><Select {...otherProps} />)`
   && {
     margin-top: 25px;
     margin-bottom: 25px;
